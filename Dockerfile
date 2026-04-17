@@ -23,7 +23,13 @@ USER jovyan
 RUN pip install --no-cache-dir networkx scipy
 
 USER root
-RUN mamba install -c conda-forge r-survey -y && \
+RUN mamba install -c conda-forge -y \
+    r-survey \
+    r-tidyverse \
+    r-skimr \
+    r-gt \
+    && \
+    # add more R packages above this line (e.g. r-ggplot2, r-dplyr)
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER && \
     mamba clean -a -y

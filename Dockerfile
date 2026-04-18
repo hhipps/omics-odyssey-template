@@ -29,7 +29,7 @@ RUN mamba install -c conda-forge -y \
     r-skimr \
     r-gt \
     r-readxl \
-    r-pROC
+    r-pROC \
     && \
     # add more R packages above this line (e.g. r-ggplot2, r-dplyr)
     fix-permissions $CONDA_DIR && \
